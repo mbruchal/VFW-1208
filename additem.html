@@ -16,7 +16,8 @@
 		<title>My Workouts</title>
 	</head>
 	<body>	<!-- Document Body -->
-		<h1>My Workouts!</h1>
+		<h1>My Workouts +</h1>
+		<h2>Goal Tracker</h2>
 		<form action="#" method="get">
 			<fieldset>
 				<legend>Add A Workout</legend>
@@ -38,9 +39,46 @@
 								</optgroup>
 							</select>
 						</li>	<!-- Drop Down Menu Choice -->
-
+						<li><label for="intensity">Intesity Level </label><input type="range" id="intensity"/></li>
+						<li><label for="NumOfDays">Number Of Days Per Week: </label>
+							<select id="NumOfDays">
+								<option value="1">1 </option>
+								<option value="2">2 </option>
+								<option value="3">3 </option>
+								<option value="4">4 </option>
+								<option value="5">5 </option>
+							</select>
+						</li>
+						<li>Duration of Excercise:
+							<ul>
+								<li><input type="radio" value="15mins" id="15mins" name="mins" /><label for="15mins">15 Mins. </li>
+								<li><input type="radio" value="30mins" id="30mins" name="mins" /><label for="30mins">30 Mins. </li>
+								<li><input type="radio" value="45mins" id="45mins" name="mins" /><label for="45mins">45 Mins. </li>
+							</ul>
+						</li>
+						<li><label for="NumOfDays">Number Of Days Per Week: </label>
+							<select id="NumOfDays">
+								<option value="1">1 </option>
+								<option value="2">2 </option>
+								<option value="3">3 </option>
+								<option value="4">4 </option>
+								<option value="5">5 </option>
+							</select>
+						</li> 
 					</ul>
+					<input type="submit" value="Save Your Workout" />
 			</fieldset>
+			<fieldset>
+				<legend>Track Your Goals</legend>
+					<ul>
+						<li><label for="bmi">BMI :</label><input type="text" id="bmi" placeholder="0.00" /></li>
+						<li><label for="BodyFat">Body Fat% </label><input type="text" id="BodyFat" placeholder="0.00" /></li>
+						<li><label for="CurrentWeight">Current Weight? </label><input type="text" id="CurrentWeight" placeholder="Ibs." /></li>
+						<li><label for="TargetWeight">Target Weight? </label><input type="text" id="TargetWeight" placeholder="Ibs." /></li>
+					</ul>
+				<input type="submit" value="Save Your Goals" />
+			</fieldset>
+		</form>
 	</body>
 </html>
 
