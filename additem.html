@@ -22,6 +22,7 @@
 			<fieldset>
 				<legend>Add A Workout</legend>
 					<ul>
+						<li><label for="todaysdate">Todays Date: </label><input type="date" id="todaysdate"/></li>
 						<li><label for="WorkoutType">Workout Type:</label>
 							<select id="WorkoutType">
 								<optgroup label="Bulking Up">
@@ -56,29 +57,24 @@
 								<li><input type="radio" value="45mins" id="45mins" name="mins" /><label for="45mins">45 Mins. </li>
 							</ul>
 						</li>
-						<li><label for="NumOfDays">Number Of Days Per Week: </label>
-							<select id="NumOfDays">
-								<option value="1">1 </option>
-								<option value="2">2 </option>
-								<option value="3">3 </option>
-								<option value="4">4 </option>
-								<option value="5">5 </option>
-							</select>
-						</li> 
+						<li><input type="hidden" value="true" /></li>
 					</ul>
-					<input type="submit" value="Save Your Workout" />
 			</fieldset>
 			<fieldset>
 				<legend>Track Your Goals</legend>
 					<ul>
 						<li><label for="bmi">BMI :</label><input type="text" id="bmi" placeholder="0.00" /></li>
-						<li><label for="BodyFat">Body Fat% </label><input type="text" id="BodyFat" placeholder="0.00" /></li>
+						<li><label for="BodyFat">Body Fat% </label><input type="text" id="BodyFat" placeholder="0.00%" /></li>
 						<li><label for="CurrentWeight">Current Weight? </label><input type="text" id="CurrentWeight" placeholder="Ibs." /></li>
 						<li><label for="TargetWeight">Target Weight? </label><input type="text" id="TargetWeight" placeholder="Ibs." /></li>
 					</ul>
-				<input type="submit" value="Save Your Goals" />
 			</fieldset>
+			<input type="submit" name="submit" value="Save!"/>
 		</form>
+			<!--nav -->
+				<a href="#" title="Clear Stored Data">Clear Stored Data</a>
+				<a href="#" title="Display Data">Display Data</a>
+			<!--/nav-->
 	</body>
 </html>
 
