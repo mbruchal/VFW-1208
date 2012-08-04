@@ -31,7 +31,7 @@ h1{
 	margin-left: 30px;
 }	
 p{
-	color: black;
+	color: white;
 	padding-left: 10px;
 }
 li{
@@ -39,12 +39,14 @@ li{
 	line-height: 30px;
 }
 fieldset{
-	background-color: #FCF7A9;
+	text-align: left;
+	background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 553, color-stop(0, #FFFFFF), color-stop(1, #999697));
 	word-wrap:normal;
 	border: 1px solid red;
 	margin: 5px;
 }
 legend {
+	text-align: center;
 	color: red;
 	-webkit-text-stroke: 1px red;
 	text-shadow:
@@ -59,6 +61,9 @@ nav{
 }
 div{
 	margin-left: 10px;
+}
+label{
+	line-height: 30px;
 }
 
 
