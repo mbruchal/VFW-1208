@@ -1,0 +1,98 @@
+<!doctype html>
+<!-- Michael Bruchal
+	 01Aug2012
+	 VFW Project 1
+	 Term 1208
+	 Add Item Page -->
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="This is the web app." />
+		<meta name="robots" content="index, follow" />
+		<meta name="viewport" content="user-scalable =no, width=device-width" />
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<meta name="handheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<title>My Workouts + Goal Tracker</title>
+		<link href="styles.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>	<!-- Document Body -->
+		<h1>My Workouts + Goal Tracker</h1>
+		<form action="#" method="post">
+			<nav>
+				<input type="submit" name="ClearData" value="Clear Workouts"/>
+				<input type="submit" name="DisplayData" value="Display Stored Info"/>
+			</nav>
+			<fieldset>
+				<legend>Add A Workout</legend>
+					<ul>
+						<li><label for="todaysdate">Todays Date: </label><input type="date" id="todaysdate"/></li>
+						<li><label for="WorkoutType">Workout Type:</label>
+							<select id="WorkoutType">
+								<optgroup label="Bulking Up">
+									<option value="chest">Chest</option>
+									<option value="legs">Legs</option>
+									<option value="shoulders">Shoulders</option>
+									<option value="back">Back</option>
+									<option value="arms">Arms</option>
+								</optgroup>
+								<optgroup label="Cutting Up">
+									<option value="Cardio">Cardio</option>
+									<option value="BattleRopes">Battle Ropes</option>
+									<option value="JumpRope">Jump Rope</option>
+									<option value="StationaryBike">Stationary Bike</option>
+								</optgroup>
+							</select>
+						</li>	<!-- Drop Down Menu Choice -->
+						<li><label for="intensity">Intesity Level </label><input type="range" id="intensity"/></li>
+						<li><label for="NumOfDays">Number Of Days Per Week: </label>
+							<select id="NumOfDays">
+								<option value="1">1 </option>
+								<option value="2">2 </option>
+								<option value="3">3 </option>
+								<option value="4">4 </option>
+								<option value="5">5 </option>
+							</select>
+						</li>
+						<li>Duration of Excercise:
+							<ul>
+								<li><input type="radio" value="15mins" id="15mins" name="mins" /><label for="15mins">15 Mins. </li>
+								<li><input type="radio" value="30mins" id="30mins" name="mins" /><label for="30mins">30 Mins. </li>
+								<li><input type="radio" value="45mins" id="45mins" name="mins" /><label for="45mins">45 Mins. </li>
+							</ul>
+						</li>
+						<li><label for="notes">Additional Notes </label><textarea id="notes"></textarea></li>
+						<li><input type="hidden" value="true" /></li>
+					</ul>
+			</fieldset>
+			<fieldset>
+				<legend>Track Your Goals</legend>
+					<ul>
+						<li><label for="bmi">BMI :</label><input type="text" id="bmi" placeholder="0.00" /></li>
+						<li><label for="BodyFat">Body Fat% </label><input type="text" id="BodyFat" placeholder="0.00%" /></li>
+						<li><label for="CurrentWeight">Current Weight? </label><input type="text" id="CurrentWeight" placeholder="Ibs." /></li>
+						<li><label for="TargetWeight">Target Weight? </label><input type="text" id="TargetWeight" placeholder="Ibs." /></li>
+					</ul>
+			</fieldset>
+				<div>
+					<input type="submit" name="submit" value="Save!"/>
+				</div>
+		</form>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
