@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		getSelectedRadio();
 		var item                = {};
 			item.date           = ["Date Added", $("dateAdded").value];
-			item.group    = ["Workout Type:", $("groups").value];
+			item.group          = ["Workout Type:", $("groups").value];
 			item.intensity      = ["Intensity:", $("intensity").value];
 			item.NumOfDays      = ["Day#", $("NumOfDays").value];
 			item.mins           = ["Mins:", minValue];
@@ -58,15 +58,39 @@ window.addEventListener("DOMContentLoaded", function() {
 		alert("Info Saved!");
 	}
 
+	function getData() {
+		var makeDiv = document.createElement("div");
+		makeDiv.setAttribute("id", "items");
+		var makeList = document.createElement("ul");
+		makeDiv.appendChild(makeList);
+		document.body.appendChild(makeDiv);
+		for (var i=0, len=localStorage.length; i<len; i++) {
+			var makeLi = document.createElement("li");
+			makeList.appendChild(makeLi);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			//Convert the string from local storage value back to an object by using JSON
+			var obj = JSON.parse(value);
+			var makeSubList = document.createElement("ul");
+			makeLi.appendChild(makeSubList);
+			for (var n in obj) {
+				var makeSubli = document.createElement("li");
+				makeSubList.appendChild(makeSubli);
+				var optSubText = obj[n][0]+ " "+obj[n][1];
+				makeSubli.innerHTML = optSubText;
+			}
+		}
+	}
+
 	var workOutType = ["--Choose a Workout--", "Chest", "Legs", "Shoulders", "Back", "Arms", "Cardio", "BattleRopes", "JumpRope", "StationaryBike"],
 		minValue;
 	makeWorkoutTypes();
 
 	//Set Link and Submit Click Events.
-	/*var displayLink = $("displayData");
+	var displayLink = $("displayData");
 	displayLink.addEventListener("click", getData);
-	var clearLink = $("clearData");
-	clearLink.addEventListener("click", clearLocal);*/
+	//var clearLink = $("clearData");
+	//clearLink.addEventListener("click", clearLocal);*/
 	var save = $("submit");
 	save.addEventListener("click", saveData);
 

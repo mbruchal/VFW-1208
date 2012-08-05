@@ -21,30 +21,15 @@
 		<h1>My Workouts + Goal Tracker</h1>
 		<form action="#" method="post">
 			<nav>
-				<input type="submit" id="clearData" value="Clear Workouts"/>
-				<input type="submit" id="displayData" value="Display Stored Info"/>
+				<a href="#" id="clearData">Clear Data <a value="Clear Workouts"/>
+				<a href="#" id="displayData">Display Data <a value="Display Stored Info"/>
 			</nav>
 			<fieldset>
 				<legend>Add A Workout</legend>
 					<ul>
 						<li><label for="todaysdate">Date Added: </label><input type="date" id="dateAdded"/></li>
-						<li id="select"><label for="group">Workout Type:</label></li>
-								<!--optgroup label="Bulking Up">
-									<option value="Chest">Chest</option>
-									<option value="Legs">Legs</option>
-									<option value="Shoulders">Shoulders</option>
-									<option value="Back">Back</option>
-									<option value="Arms">Arms</option>
-								</optgroup>
-								<optgroup label="Cutting Up">
-									<option value="Cardio">Cardio</option>
-									<option value="BattleRopes">Battle Ropes</option>
-									<option value="JumpRope">Jump Rope</option>
-									<option value="StationaryBike">Stationary Bike</option>
-								</optgroup>
-							</select-->
-							<!-- Drop Down Menu Choice -->
-						<label for="intensity">Intensity Level? </label>
+						<li id="select"><label for="group">Workout Type:</label></li>	<!-- Drop Down Menu Choice -->
+							<label for="intensity">Intensity Level? </label>
 						<li>Easy<input type="range" min="1" max="10" id="intensity"/>Insane</li>
 						<li><label for="NumOfDays">Number Of Days Per Week: </label>
 							<select id="NumOfDays">
