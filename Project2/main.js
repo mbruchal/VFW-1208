@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		getSelectedRadio();
 		var item                = {};
 			item.date           = ["Date Added", $("dateAdded").value];
-			item.workOutType    = ["Workout Type:", $("select").value];
+			item.group    = ["Workout Type:", $("groups").value];
 			item.intensity      = ["Intensity:", $("intensity").value];
 			item.NumOfDays      = ["Day#", $("NumOfDays").value];
 			item.mins           = ["Mins:", minValue];
