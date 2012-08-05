@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		alert("Info Saved!");
 	}
 
-	var workOutType = ["Chest", "Legs", "Shoulders", "Back", "Arms", "Cardio", "BattleRopes", "JumpRope", "StationaryBike"],
+	var workOutType = ["--Choose a Workout--", "Chest", "Legs", "Shoulders", "Back", "Arms", "Cardio", "BattleRopes", "JumpRope", "StationaryBike"],
 		minValue;
 	makeWorkoutTypes();
 
