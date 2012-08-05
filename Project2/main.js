@@ -6,7 +6,6 @@
 
 //Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function() {
-	//alert(localStorage.value(0));
 
 	//getElementById function
 	function $(x) {
@@ -40,6 +39,26 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 
+	function toggleControls(n) {
+		switch(n) {
+			case "on":
+				$("workoutForm").style.display = "none";
+				$("clearData").style.display = "inline";
+				$("displayData").style.display = "none";
+				$("addNew").style.display = "inline";
+				break;
+			case "off":
+				$("workoutForm").style.display = "block";
+				$("clearData").style.display = "inline";
+				$("displayData").style.display = "inline";
+				$("addNew").style.display = "none";
+				$("items").style.display = "none";
+				break;
+			default:
+				return false;
+		}
+	}
+
 	function saveData() {
 		var id 					= Math.floor(Math.random()*10000001);
 		getSelectedRadio();
@@ -59,11 +78,16 @@ window.addEventListener("DOMContentLoaded", function() {
 	}
 
 	function getData() {
+		toggleControls("on");
+		if(localStorage.length === 0) {
+			alert("There are no Workouts to display");
+		}
 		var makeDiv = document.createElement("div");
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement("ul");
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
+		$("items").style.display = "display";
 		for (var i=0, len=localStorage.length; i<len; i++) {
 			var makeLi = document.createElement("li");
 			makeList.appendChild(makeLi);
@@ -82,6 +106,17 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 
+	function clearLocal() {
+		if (localStorage.length === 0) {
+			alert("There is no data to clear!")
+		} else {
+			localStorage.clear();
+			alert("All Workouts are deleted!");
+			window.location.reload();
+			return false;
+		}
+	}
+	//Variable Defaults
 	var workOutType = ["--Choose a Workout--", "Chest", "Legs", "Shoulders", "Back", "Arms", "Cardio", "BattleRopes", "JumpRope", "StationaryBike"],
 		minValue;
 	makeWorkoutTypes();
@@ -89,8 +124,8 @@ window.addEventListener("DOMContentLoaded", function() {
 	//Set Link and Submit Click Events.
 	var displayLink = $("displayData");
 	displayLink.addEventListener("click", getData);
-	//var clearLink = $("clearData");
-	//clearLink.addEventListener("click", clearLocal);*/
+	var clearLink = $("clearData");
+	clearLink.addEventListener("click", clearLocal);
 	var save = $("submit");
 	save.addEventListener("click", saveData);
 
