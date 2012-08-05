@@ -21,21 +21,20 @@
 		<h1>My Workouts + Goal Tracker</h1>
 		<form action="#" method="post">
 			<nav>
-				<input type="submit" name="ClearData" value="Clear Workouts"/>
-				<input type="submit" name="DisplayData" value="Display Stored Info"/>
+				<input type="submit" id="clearData" value="Clear Workouts"/>
+				<input type="submit" id="displayData" value="Display Stored Info"/>
 			</nav>
 			<fieldset>
 				<legend>Add A Workout</legend>
 					<ul>
-						<li><label for="todaysdate">Todays Date: </label><input type="date" id="todaysdate"/></li>
-						<li><label for="WorkoutType">Workout Type:</label>
-							<select id="WorkoutType">
-								<optgroup label="Bulking Up">
-									<option value="chest">Chest</option>
-									<option value="legs">Legs</option>
-									<option value="shoulders">Shoulders</option>
-									<option value="back">Back</option>
-									<option value="arms">Arms</option>
+						<li><label for="todaysdate">Date Added: </label><input type="date" id="dateAdded"/></li>
+						<li id="select"><label for="group">Workout Type:</label></li>
+								<!--optgroup label="Bulking Up">
+									<option value="Chest">Chest</option>
+									<option value="Legs">Legs</option>
+									<option value="Shoulders">Shoulders</option>
+									<option value="Back">Back</option>
+									<option value="Arms">Arms</option>
 								</optgroup>
 								<optgroup label="Cutting Up">
 									<option value="Cardio">Cardio</option>
@@ -43,10 +42,10 @@
 									<option value="JumpRope">Jump Rope</option>
 									<option value="StationaryBike">Stationary Bike</option>
 								</optgroup>
-							</select>
+							</select-->
 						</li>	<!-- Drop Down Menu Choice -->
 						<label for="intensity">Intensity Level? </label>
-						<li>Easy<input type="range" id="intensity"/>Insane</li>
+						<li>Easy<input type="range" min="1" max="10" id="intensity"/>Insane</li>
 						<li><label for="NumOfDays">Number Of Days Per Week: </label>
 							<select id="NumOfDays">
 								<option value="1">1 </option>
@@ -58,9 +57,9 @@
 						</li>
 						<li>Duration of Excercise:
 							<ul>
-								<li><input type="radio" value="15mins" id="15mins" name="mins" /><label for="15mins">15 Mins. </li>
-								<li><input type="radio" value="30mins" id="30mins" name="mins" /><label for="30mins">30 Mins. </li>
-								<li><input type="radio" value="45mins" id="45mins" name="mins" /><label for="45mins">45 Mins. </li>
+								<li><input type="radio" value="15mins" id="mins" name="15mins" /><label for="15mins">15 Mins. </li>
+								<li><input type="radio" value="30mins" id="mins" name="30mins" /><label for="30mins">30 Mins. </li>
+								<li><input type="radio" value="45mins" id="mins" name="45mins" /><label for="45mins">45 Mins. </li>
 							</ul>
 						</li>
 						<li><label for="notes">Additional Notes </label><textarea id="notes"></textarea></li>
@@ -77,9 +76,10 @@
 					</ul>
 			</fieldset>
 				<div>
-					<input type="submit" name="submit" value="Save!"/>
+					<input type="submit" id="submit" value="Save!"/>
 				</div>
 		</form>
+		<script src="main.js" type="text/javascript"></script>
 	</body>
 </html>
 
