@@ -63,14 +63,14 @@ window.addEventListener("DOMContentLoaded", function() {
 		var id 					= Math.floor(Math.random()*10000001);
 		getSelectedRadio();
 		var item                = {};
-			item.date           = ["Date Added", $("dateAdded").value];
+			item.date           = ["Date Added ", $("dateAdded").value];
 			item.group          = ["Workout Type:", $("groups").value];
 			item.intensity      = ["Intensity:", $("intensity").value];
-			item.NumOfDays      = ["Day#", $("NumOfDays").value];
+			item.NumOfDays      = ["Day# ", $("NumOfDays").value];
 			item.mins           = ["Mins:", minValue];
 			item.notes          = ["Notes:", $("notes").value];
 			item.bmi            = ["BMI:", $("bmi").value];
-			item.BodyFat        = ["Body Fat%", $("BodyFat").value];
+			item.BodyFat        = ["Body Fat% ", $("BodyFat").value];
 			item.CurrentWeight  = ["Current Weight:", $("CurrentWeight").value];
 			item.TargetWeight   = ["Target Weight:", $("TargetWeight").value];
 		localStorage.setItem(id, JSON.stringify(item));
