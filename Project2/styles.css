@@ -13,8 +13,8 @@ body{
 	background-attachment: fixed;
 	}
 h1{
+	font-family: 'Metal Mania', cursive;
 	background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 553, color-stop(0, #FFFFFF), color-stop(1, #999697));
-	-webkit-text-stroke: 1px red;
 	color: red;
 	text-shadow:
 		3px 3px 0 #000,
@@ -23,14 +23,12 @@ h1{
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
 	text-align: center;
-	/*border: 1px solid red;*/
 	margin: 10px 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin-right: 30px;
 	margin-left: 30px;
 }
-
 p{
 	background-color: black;
 	border-color: red;
@@ -39,7 +37,7 @@ p{
 	padding-left: 10px;
 }
 li{
-	text-align: left; 
+	font-family: 'Black Ops One', cursive;
 	color: white;
 	line-height: 30px;
 }
@@ -53,9 +51,10 @@ fieldset{
 	margin-top: 20px;
 }
 legend{
+	font-family: 'Metal Mania', cursive;
+	font-size: xx-large;
 	text-align: center;
 	color: red;
-	-webkit-text-stroke: 1px red;
 	text-shadow:
 		3px 3px 0 #000,
 		-1px -1px 0 #000,
@@ -84,15 +83,13 @@ a:hover{
 	color: white;
 	background-color: transparent;
 }
-input[id=items]{
-	border-color: black;
-	border-style: dashed;
-}
-div{
-	margin-left: 5px;
-	width: 30px;
+#items{
+	border-color: red;
+	border-style: inset;
+	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #999697), color-stop(1, #000000));
 }
 label{
+	font-family: 'Black Ops One', cursive;
 	line-height: 30px;
 	color: white;
 }
