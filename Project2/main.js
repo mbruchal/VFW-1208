@@ -116,6 +116,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			return false;
 		}
 	}
+	
 	//Variable Defaults
 	var workOutType = ["--Choose a Workout--", "Chest", "Legs", "Shoulders", "Back", "Arms", "Cardio", "BattleRopes", "JumpRope", "StationaryBike"],
 		minValue;
