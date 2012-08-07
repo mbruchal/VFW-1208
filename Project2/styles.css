@@ -37,8 +37,14 @@ p{
 	background-color: black;
 	border-color: red;
 	border-style: inset;
+	border-radius: 50px;
 	color: white;
-	padding-left: 10px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 1.5em auto;
+	text-align: center;
 }
 li{
 	font-family: 'Black Ops One', cursive;
@@ -70,6 +76,7 @@ nav{
 	text-align: center;
 }
 #items{
+	margin-top: 10px;
 	border-color: red;
 	border-style: inset;
 	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #999697), color-stop(1, #000000));
@@ -106,6 +113,10 @@ label{
 	line-height: 30px;
 	color: white;
 }
+#start{
+	margin-left: 80px;
+}
+
 
 
 
