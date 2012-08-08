@@ -32,54 +32,8 @@ h1{
 	border-color: red;
 	border-style: inset;
 }
-p{
-	font-family: 'Black Ops One', cursive;
-	background-color: black;
-	border-color: red;
-	border-style: inset;
-	border-radius: 50px;
-	color: white;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin: 1.5em auto;
-	text-align: center;
-}
-li{
-	font-family: 'Black Ops One', cursive;
-	color: white;
-	line-height: 30px;
-}
-fieldset{
-	text-align: left;
-	background: url(transparent_gradient.png) no-repeat;
-	word-wrap:normal;
-	border-color: red;
-	border-style: inset;
-	margin: 5px;
-	margin-top: 20px;
-}
-legend{
-	font-family: 'Trade Winds', cursive;
-	font-size: x-large;
-	text-align: center;
-	color: red;
-	text-shadow:
-		3px 3px 0 #000,
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
-}
 nav{
 	text-align: center;
-}
-#items{
-	margin-top: 10px;
-	border-color: red;
-	border-style: inset;
-	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #999697), color-stop(1, #000000));
 }
 a {
   -webkit-border-radius: 2px;
@@ -108,14 +62,70 @@ a:active {
   color: #333;
   text-decoration: none;
 }
+p{
+	font-family: 'Black Ops One', cursive;
+	background-color: black;
+	border-color: red;
+	border-style: inset;
+	border-radius: 50px;
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 1.5em auto;
+	text-align: center;
+}
+legend{
+	font-family: 'Trade Winds', cursive;
+	font-size: x-large;
+	text-align: center;
+	color: red;
+	text-shadow:
+		3px 3px 0 #000,
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+fieldset{
+	text-align: left;
+	background: url(transparent_gradient.png) no-repeat;
+	word-wrap:normal;
+	border-color: red;
+	border-style: inset;
+	margin: 5px;
+	margin-top: 20px;
+}
+li{
+	font-family: 'Black Ops One', cursive;
+	color: white;
+	line-height: 30px;
+}
+input[type='range'] { 
+	-webkit-appearance: none;
+	border-style: inset;
+	border-color: red;
+	background-color: black;
+}
 label{
 	font-family: 'Black Ops One', cursive;
 	line-height: 30px;
 	color: white;
 }
+#items{
+	margin-top: 10px;
+	border-color: red;
+	border-style: inset;
+	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #999697), color-stop(1, #000000));
+}
 #start{
 	margin-left: 80px;
 }
+#clearData{
+	margin-right: 50px;
+}
+
 
 
 
