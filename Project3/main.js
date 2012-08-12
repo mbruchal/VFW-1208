@@ -59,8 +59,16 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 
-	function saveData() {
+	function saveData(key) {
+		//If there is no key, this means this is a brand new item and we need a new key.
+		if(!key) {
 		var id 					= Math.floor(Math.random()*10000001);
+		} else {
+			//Set the id to the existing key we're editing so that it will save over the data
+			//The key is the same key thats been passed along from the editSubmit event handler
+			//to the validate function, and then passed here, into the saveData function
+			id = key;
+		}
 		getSelectedRadio();
 		var item                = {};
 			item.date           = ["Date Added: ", $("dateAdded").value];
@@ -130,11 +138,12 @@ window.addEventListener("DOMContentLoaded", function() {
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Workout";
-		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
 	}
 
+	//Edit single item
 	function editItem () {
 		//Grab the data from our item from Local Storage
 		var value = localStorage.getItem(this.key);
@@ -160,11 +169,21 @@ window.addEventListener("DOMContentLoaded", function() {
 			    }
 		}
 		$("dateAdded").value = item.date[1];
+
+		//Remove the initial listener from the input "save workout" button.
+		save.removeEventListener("click", saveData);
+		//Change submit button value to edit button
+		$("submit").value = "Edit Workout";
+		var editSubmit = $("submit");
+		//Save the key value established in this function as a property of the editSubmit event
+		//so we can use that value when we save the data we edited.
+		editSubmit.addEventListener("click", validate);
+		editSubmit.key = this.key;
 	}
 
 	function clearLocal() {
 		if (localStorage.length === 0) {
-			alert("There is no data to clear!")
+			alert("There is no data to clear!");
 		} else {
 			localStorage.clear();
 			alert("All Workouts are deleted!");
@@ -172,11 +191,83 @@ window.addEventListener("DOMContentLoaded", function() {
 			return false;
 		}
 	}
+
+	function deleteItem() {
+		var ask = confirm("Are you sure you want to delete this Workout?");
+		if(ask) {
+			localStorage.removeItem(this.key);
+			alert("Workout was deleted");
+			window.location.reload();
+		} else {
+			alert("Workout was deleted!");
+		}
+	}
+
+	function validate(e) {
+		//Define the elements we want to check
+		var getGroup = $("groups");
+		var getdateAdded = $("dateAdded");
+		var getCurrentWeight = $("CurrentWeight");
+		var getTargetWeight = $("TargetWeight");
+
+		//Reset Error Messages
+		errMsg.innerHTML = "";
+		getGroup.style.border = "1px solid black";
+		getdateAdded.style.border = "1px solid black";
+		getCurrentWeight.style.border = "1px solid black";
+		getTargetWeight.style.border = "1px solid black";
+
+		//Get error message
+		var messageAry = [];
+		//Group validation
+		if(getGroup.value === "--Choose a Workout--") {
+			var groupError = "Please Choose a Workout!";
+			getGroup.style.border = "1px solid red";
+			messageAry.push(groupError);
+		}
+
+		//Date validation
+		if(getdateAdded.value === "") {
+			var dateAddedError = "Please add a date!";
+			getdateAdded.style.border = "1px solid red";
+			messageAry.push(dateAddedError);
+		}
+
+		//Current Weight
+		if(getCurrentWeight.value === "") {
+			var currentWeightError = "Please add Current Weight!";
+			getCurrentWeight.style.border = "1px solid red";
+			messageAry.push(currentWeightError);
+		}
+
+		//Target Weight
+		if(getTargetWeight.value === "") {
+			var targetWeightError = "Please add Target Weight!";
+			getTargetWeight.style.border = "1px solid red";
+			messageAry.push(targetWeightError);
+		}
+
+		//If there were errors, display them on the screen.
+		if(messageAry.length >=1) {
+			for(var i=0, j=messageAry.length; i < j; i++) {
+				var txt = document.createElement("li");
+				txt.innerHTML = messageAry[i];
+				errMsg.appendChild(txt);
+			}
+			e.preventDefault();
+			return false;
+		} else {
+		  //If all is OK save our data. Send the key value (which came from the editData function)
+		  //Remember this key value passed through the editSubmit event listener as a property.
+		    saveData(this.key);
+		  } 
+	}
 	
 	//Variable Defaults
 	var workOutType = ["--Choose a Workout--", "Chest", "Legs", "Shoulders", "Back", "Arms", "Cardio", "BattleRopes", "JumpRope", "StationaryBike"],
 		minValue;
 	makeWorkoutTypes();
+	errMsg = $("errors");
 
 	//Set Link and Submit Click Events.
 	var displayLink = $("displayData");
@@ -184,7 +275,7 @@ window.addEventListener("DOMContentLoaded", function() {
 	var clearLink = $("clearData");
 	clearLink.addEventListener("click", clearLocal);
 	var save = $("submit");
-	save.addEventListener("click", saveData);
+	save.addEventListener("click", validate);
 
 
 

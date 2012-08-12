@@ -26,12 +26,14 @@
 				<a href="#" id="displayData">Display Data <a value="Display Stored Info"/>
 				<a href="additem.html" id="addNew" style="display:none;">Add New Item</a>
 			</nav>
-		<form action="#" method="post" id="workoutForm" />
+		<form action="#" method="post" id="workoutForm">
 			<fieldset>
 				<legend>Add A Workout</legend>
+					<span id="fields">* fields are required.</span>
+					<ul id="errors"></ul>
 					<ul>
-						<li><label for="todaysdate">Date Added: </label><input type="date" id="dateAdded"/></li>
-						<li id="select"><label for="group">Workout Type: </label></li>	<!-- Drop Down Menu Choice -->
+						<li><label for="todaysdate">*Date Added: </label><input type="date" id="dateAdded"/></li>
+						<li id="select"><label for="group">*Workout Type: </label></li>	<!-- Drop Down Menu Choice -->
 							<label for="intensity">Intensity Level? </label>
 						<li>Easy<input type="range" min="1" max="10" id="intensity"/>Insane</li>
 						<li><label for="NumOfDays">Number Of Days Per Week: </label>
@@ -43,7 +45,7 @@
 								<option value="5">5 </option>
 							</select>
 						</li>
-						<li>Duration of Excercise:
+						<li>*Duration of Excercise:
 							<ul>
 								<li><input type="radio" value="15mins" id="mins" name="mins" /><label for="15mins">15 Mins.</label> </li>
 								<li><input type="radio" value="30mins" id="mins" name="mins" /><label for="30mins">30 Mins.</label> </li>
@@ -58,8 +60,8 @@
 					<ul>
 						<li><label for="bmi">BMI: </label><input type="text" id="bmi" placeholder="0.00" /></li>
 						<li><label for="BodyFat">Body Fat% </label><input type="text" id="BodyFat" placeholder="0.00%" /></li>
-						<li><label for="CurrentWeight">Current Weight? </label><input type="text" id="CurrentWeight" placeholder="Ibs." /></li>
-						<li><label for="TargetWeight">Target Weight? </label><input type="text" id="TargetWeight" placeholder="Ibs." /></li>
+						<li><label for="CurrentWeight">*Current Weight? </label><input type="text" id="CurrentWeight" placeholder="Ibs." /></li>
+						<li><label for="TargetWeight">*Target Weight? </label><input type="text" id="TargetWeight" placeholder="Ibs." /></li>
 					</ul>
 				<input type="submit" id="submit" value="Save!"/>
 			</fieldset>

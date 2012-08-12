@@ -98,6 +98,7 @@ fieldset{
 	margin-top: 20px;
 }
 li{
+	display: block;
 	font-family: 'Black Ops One', cursive;
 	color: white;
 	line-height: 30px;
@@ -125,8 +126,13 @@ label{
 #clearData{
 	margin-right: 30px;
 }
-
-
+#fields{
+	color: yellow;
+	margin-left: 20px;
+}
+form fieldset ul#errors{
+	color: yellow;
+}
 
 
 
