@@ -130,8 +130,12 @@ label{
 	color: yellow;
 	margin-left: 20px;
 }
-form fieldset ul#errors{
-	color: yellow;
+#rangevalue{
+	border-color: red;
+	border-style: inset;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 3px;
 }
 
 
