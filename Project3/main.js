@@ -169,6 +169,9 @@ window.addEventListener("DOMContentLoaded", function() {
 			    }
 		}
 		$("dateAdded").value = item.date[1];
+		$("bmi").value = item.bmi[1];
+		$("intensity").value = item.intensity[1];
+		$("NumOfDays").value = item.NumOfDays[1];
 
 		//Remove the initial listener from the input "save workout" button.
 		save.removeEventListener("click", saveData);
@@ -222,28 +225,28 @@ window.addEventListener("DOMContentLoaded", function() {
 		//Group validation
 		if(getGroup.value === "--Choose a Workout--") {
 			var groupError = "Please Choose a Workout!";
-			getGroup.style.border = "1px solid red";
+			getGroup.style.border = "1px solid yellow";
 			messageAry.push(groupError);
 		}
 
 		//Date validation
 		if(getdateAdded.value === "") {
 			var dateAddedError = "Please add a date!";
-			getdateAdded.style.border = "1px solid red";
+			getdateAdded.style.border = "1px solid yellow";
 			messageAry.push(dateAddedError);
 		}
 
 		//Current Weight
 		if(getCurrentWeight.value === "") {
 			var currentWeightError = "Please add Current Weight!";
-			getCurrentWeight.style.border = "1px solid red";
+			getCurrentWeight.style.border = "1px solid yellow";
 			messageAry.push(currentWeightError);
 		}
 
 		//Target Weight
 		if(getTargetWeight.value === "") {
 			var targetWeightError = "Please add Target Weight!";
-			getTargetWeight.style.border = "1px solid red";
+			getTargetWeight.style.border = "1px solid yellow";
 			messageAry.push(targetWeightError);
 		}
 
