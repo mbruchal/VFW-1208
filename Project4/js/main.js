@@ -108,6 +108,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement("ul");
 			makeLi.appendChild(makeSubList);
+			getImage(obj.group[1], makeSubList);
 			for (var n in obj) {
 				var makeSubli = document.createElement("li");
 				makeSubList.appendChild(makeSubli);
@@ -117,6 +118,15 @@ window.addEventListener("DOMContentLoaded", function() {
 			}
 			makeItemLinks(localStorage.key(i), linksLi); //create our edit/delete buttons for each item in local storage
 		}
+	}
+
+	//Get the image foe the right category.
+	function getImage(iconName, makeSubList) {
+		var imageLi = document.createElement("li");
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement("img");
+		var setSrc = newImg.setAttribute("src", "img/" + iconName + ".png");
+		imageLi.appendChild(newImg);
 	}
 
 	//Auto Populate Local Storage.
@@ -205,7 +215,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			alert("All Workouts are deleted!");
 			window.location.reload();
 			return false;
-		}
+		  }
 	}
 
 	function deleteItem() {
@@ -216,7 +226,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			window.location.reload();
 		} else {
 			alert("Workout was deleted!");
-		}
+		  }
 	}
 
 	function validate(e) {
@@ -292,10 +302,4 @@ window.addEventListener("DOMContentLoaded", function() {
 	clearLink.addEventListener("click", clearLocal);
 	var save = $("submit");
 	save.addEventListener("click", validate);
-
-
-
-
-
-
 });

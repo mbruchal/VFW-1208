@@ -15,7 +15,7 @@
 		<meta name="handheldFriendly" content="true" />
 		<meta name="MobileOptimized" content="320" />
 		<title>My Workouts + Goal Tracker</title>
-		<link href="styles.css" rel="stylesheet" type="text/css"/>
+		<link href="css/styles.css" rel="stylesheet" type="text/css"/>
 		<link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
 	</head>
@@ -35,7 +35,7 @@
 						<li><label for="todaysdate">*Date Added: </label><input type="date" id="dateAdded"/></li>
 						<li id="select"><label for="group">*Workout Type: </label></li>	<!-- Drop Down Menu Choice -->
 							<label for="intensity">Intensity Level? </label>
-						<li><input id="intensity" type="range" min="1" max="10" onchange="rangevalue.value = value"></input></li>
+						<li><input id="intensity" type="range" min="1" max="10" value="5" onchange="rangevalue.value = value"></input></li>
 						<li>Easy-1<output id="rangevalue">5</output>Insane-10</li>
 						<li><label for="NumOfDays">Number Of Days Per Week: </label>
 							<select id="NumOfDays">
@@ -67,8 +67,8 @@
 				<input type="submit" id="submit" value="Save!"/>
 			</fieldset>
 		</form>
-		<script src="json.js" type="text/javascript"></script>
-		<script src="main.js" type="text/javascript"></script>
+		<script src="js/json.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
 	</body>
 </html>
 
