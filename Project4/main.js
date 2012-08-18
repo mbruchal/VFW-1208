@@ -183,6 +183,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		$("dateAdded").value = item.date[1];
 		$("bmi").value = item.bmi[1];
 		$("intensity").value = item.intensity[1];
+		$("rangevalue").value = item.intensity[1];
 		$("NumOfDays").value = item.NumOfDays[1];
 
 		//Remove the initial listener from the input "save workout" button.
