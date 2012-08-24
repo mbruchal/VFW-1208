@@ -89,7 +89,6 @@ legend{
 		1px 1px 0 #000;
 }
 fieldset{
-	text-align: left;
 	background: url(images/transparent_gradient.png) no-repeat;
 	word-wrap:normal;
 	border-color: red;
@@ -98,6 +97,7 @@ fieldset{
 	margin-top: 20px;
 }
 li{
+	margin-left: -20px;
 	display: block;
 	font-family: 'Black Ops One', cursive;
 	color: white;
@@ -136,6 +136,11 @@ label{
 	margin-left: 10px;
 	margin-right: 10px;
 	padding: 3px;
+}
+div ul{
+	border-bottom: solid white 1px;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
 }
 
 

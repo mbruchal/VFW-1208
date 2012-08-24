@@ -120,7 +120,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 
-	//Get the image foe the right category.
+	//Get the image for the right category.
 	function getImage(iconName, makeSubList) {
 		var imageLi = document.createElement("li");
 		makeSubList.appendChild(imageLi);
